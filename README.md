@@ -1,13 +1,31 @@
-# An Analysis of Kickstarter Campaigns
-Performing analysis on Kickstarter to uncover trends
----
-*In this project, we explore many different trends in the outcomes for Kickstarter funding campaigns for the Theatrical category.
-*We start with a Meta view of both Successful and Failed theater campaigns based on month as well as pull out specific US based theatrical campaigns both successful and failed.
-*Statistical analysis is also provided for both successful and failed theatrical campaigns and wearables campaigns. 
-*What we find in this analysis is that April-August is the best time to launch a successful theater campaign.
-*Theater campains are successful more than not.
-*Successful theater campaigns additionally have a lower goal(median goal of $3000) than failed campaigns (median goal of $5000). Successful theater campaigns also have a higher median pledge ($3168) compared to failed campaigns ($103).
-*When compared to another category (Wearables) we see the same trend in goals and pledges.
----
-![Outcomes_Based_on_Launch_Date](UNC_Data_Analytics/Analysis_Project/Crowdfunding_Analysis/Outcomes_Based_on_Launch_Date.png)
-![Parent_Category_Outcomes_Chart](UNC_Data_Analytics/Analysis_Project/Crowdfunding_Analysis/Parent_Category_Outcomes_Chart.png)
+# Kickstarter Outcome Analysis
+
+## Project Overview 
+- This analysis is intended to help determine the best approach to take in order to launch a successful Kickstarter campaign based on time of year and campaign goal. 
+
+### Purpose 
+- The purpose of this data analysis is to help determine the optimal condition in which to launch a Kickstarter campaign for a theatrical play. To make a data driven decision, we first looked at summary data for the Theater category-based outcomes by month. Secondly, we analyzed categorical data for the Plays subcategory based on campaign goals in order to review the outcomes.
+
+## Analysis and Challenges
+- To complete this analysis, data from Kickstarter was organized and sorted in a spreadsheet. This dataset contains Kickstarter campaign data from 2009-2017 and results from a total of 4116 campaigns. These campaigns are arranged into 42 different categories and subcategories. For the purposed of this analysis, we will only be looking at 2, the "Theater" parent category and the "Plays" subcategory. After filtering out all unrelated data as well as active campaigns, we are left with a total of 1369 Theater and 1046 Plays campaigns to draw data and a conclusion from. While this information will ultimately help guide Louise in her formation of a Kickstarter campaign, it is worth noting some of the challenges with this dataset. First and foremost, this data is dated, with the most recent data being 5 years old. Social and economic factors around the world have changed and therefore, results can not be guaranteed and all conclusions drawn from this analysis should be taken as general guidance only. 
+
+### Analysis of Outcomes Based on Launch Date
+- In our first analysis we will be looking at 1369 unique Theater campaigns from our Kickstarter dataset and determining their outcomes based on their launch date. We start by creating a pivot table in a new sheet (Theater Outcomes by Launch Date) from all the data. We then place our outcomes in individual columns and value them as the count of the outcomes. We create rows as date created and filter the data by theater category and all years. The data is summarized in the pivot table showing the total count of each outcome of each campaign based on month.   Furthermore, a line chart was created in order to visualize the data in the pivot chart in order to see the data more clearly. The data clearly shows that Theater campaigns are most successful when launched April through August with their peak of success being Launch in May. It should also be noted that during this same timeframe there is also the most campaigns started ultimately leading to the most competition for backers. We can also conclude from the data that the most Theater campaigns and most failed Theater campaigns were launched during the month of May. 
+
+### Analysis of Outcomes Based on Goals 
+- In this second analysis we look at the outcomes of 1046 Kickstarter campaigns in the Plays subcategory based on their intended goals. In order to complete this analysis, we created a table in a new sheet (Outcomes Based on Goal). This table contains 11 rows and 7 columns. The rows contain the goals broken into different denominations starting with Less than $1000 and ranging upwards in $5000 increments to $50000 or more. The columns break down the campaign outcomes by number of total, successful, failed, canceled, and what percentages were successful, failed and canceled. We utilized the COUNTIFS() formula in order to populate the cells in columns B through D.   We then used the SUM () formula to populate cells in column E.   Next, the percentages were calculated using a simple formula shown here.   The Final column, Percentage Canceled was calculated using the IFERROR() formula due to the fact that you are unable to divide 0.    Once this information was analyzed, a line chart was created to visualize the outcomes. What we see from the analysis is that are 2 inflection points in the outcomes where failure is more likely. These inflection points occur at $15000 to $19999 lasting through $30000 to $34999 and then again at $50000 and above.  We can also determine that the highest percentage of success occurs at the Less than $1000 goal (75.81%) closely followed by the $1000 to $4999 range (72.66%). While there is a 66.67% chance of success at higher goals, $35000-$44999, it is worth noting that the sample size is much smaller, only 9 total projects, and may not be representative of the sample as a whole.  
+
+### Challenges and Difficulties Encountered
+- Some of the challenges incurred for these analysis' include the age of the data as outlined above. The most recent data is 5 years old. Again, social, and economic factors have changed greatly over the last 5 years which may affect modern outcomes. Additionally, in the Outcomes Based on Goals analysis, the $35000-$44999 show more than 50% success rate. However, less than 1% of all projects fall into these categories meaning these results may not be reflective of the population as a whole. 
+
+## Results
+
+- Based on the information we find in the Outcomes Based on Launch Date analysis we can conclude that the best time to launch a theater-based campaign is during the months of April through August. 
+Within this timeframe, May and June are the peak of successful launches. They additionally have the highest success to fail ratio. We can further conclude that the fall and winter is the worst 
+time to launch a campaign. October through January has the highest ratio of failed to successful launches, December being almost a 1:1 ratio. 
+
+- Given the data we have in the Outcomes Based on Goals dataset, we can determine that the highest rate of success comes for campaigns launched with a goal of less than $1000. The second highest rate of success comes from those with a goal of $1000 to $4999. These two categories combined account for just over 68% of all the campaigns in the Plays subcategory and have a success rate of over 72%. We are also able to conclude that the highest rate of failure occurs in campaigns with goals of $50000 or more (87.5%) closely followed by campaigns with goals ranging from $25000 to $34999 (72%-80%).
+
+- Some of the limiting factors for the data are prevalent in the Outcomes Based on Goal dataset. Trying to draw conclusions for the percentage of successful and failed campaigns in the $25000 through $50000 or more categories becomes skewed due to the total number of projects in these combined groups. They combined only account for approximately 4% of all campaigns. Trying to draw accurate conclusions is extremely difficult due to limited sample size. In this case, I would recommend using extreme caution drawing conclusions based on this portion of the dataset. 
+
+- Another possible table that we could create could be for a secondary analysis to supplement the limitations in the data for Outcomes Based on Goals. Instead of trying to draw conclusions based on Plays solely, we could create another table identical to the first but use all Theater group data just like we did in the Outcomes Based on Launch date dataset. This would give us a larger population and we could compare results from this new table to that of the original. If results are similar, we could feel more confident in our findings.
